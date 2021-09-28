@@ -45,8 +45,29 @@ const getAll = () => {
 //     //   console.log("fields",fields);
 //   });
 // };
+
+const UPDATE = (id) => {
+  const queryString = `UPDATE book
+  SET title = 'dreaming'
+  WHERE id =${id} `;
+  // const data = [id];
+  connection.query(queryString, (err, result) => {
+   if(err){
+     console.log(err.response);
+   }
+   console.log(result);
+  });
+}
+
+
+
+
+
+
+
 addbook(book);
  getAll();
+//  UPDATE(2)
 
 
 
