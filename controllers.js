@@ -60,15 +60,26 @@ const UPDATE = (id) => {
 }
 
 
+const deleter = (id) => {
+  const queryString = `DELETE FROM  book
+  WHERE id = ? `;
+   const data = [id];
+  connection.query(queryString, data , (err, result) => {
+   if(err){
+     console.log(err.response);
+   }
+   console.log(result);
+  });
+}
 
 
 
 
 
-addbook(book);
+//  addbook(book);
  getAll();
 //  UPDATE(2)
 
-
+// deleter(5);
 
 
