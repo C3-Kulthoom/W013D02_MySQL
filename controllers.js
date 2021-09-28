@@ -72,14 +72,21 @@ const deleter = (id) => {
   });
 }
 
-
+const getAllOrdered  = () => {
+  const query = `SELECT * FROM book ORDER BY id DESC`;
+  connection.query(query, (err, result, fields) => {
+    console.log("result", result);
+    console.log("==========================");
+    // console.log("fields", fields);
+  });
+};
 
 
 
 //  addbook(book);
- getAll();
+//  getAll();
 //  UPDATE(2)
 
 // deleter(5);
-
+getAllOrdered() ; 
 
