@@ -90,6 +90,18 @@ const getAllNullPrice = () => {
   });
 };
 
+
+
+
+const getAllNotNullPrice = () => {
+  const query = `SELECT * FROM book WHERE price IS  NOT NULL `;
+  connection.query(query, (err, result, fields) => {
+    console.log("result", result);
+    console.log("==========================");
+    // console.log("fields", fields);
+  });
+};
+ 
 //  addbook(book);
 //  getAll();
 //  UPDATE(2)
@@ -97,4 +109,5 @@ const getAllNullPrice = () => {
 // deleter(5);
 // getAllOrdered() ; 
 
-getAllNullPrice()
+// getAllNullPrice()
+getAllNotNullPrice()
