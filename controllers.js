@@ -2,10 +2,10 @@ const connection = require("./db");
 
 const book = {
 
-  title: "kjk",
-  author: "kjkkko",
-  published_at: "Jo",
-  price: 34,
+  title: "hhhh",
+  author: "nnnnnnnnn",
+  published_at: "Jggggggg",
+  price: null,
 };
 
 const addbook = (book) => {
@@ -81,12 +81,20 @@ const getAllOrdered  = () => {
   });
 };
 
-
+const getAllNullPrice = () => {
+  const query = `SELECT * FROM book WHERE price IS NULL `;
+  connection.query(query, (err, result, fields) => {
+    console.log("result", result);
+    console.log("==========================");
+    // console.log("fields", fields);
+  });
+};
 
 //  addbook(book);
 //  getAll();
 //  UPDATE(2)
 
 // deleter(5);
-getAllOrdered() ; 
+// getAllOrdered() ; 
 
+getAllNullPrice()
